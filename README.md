@@ -40,7 +40,7 @@ model <- glm(incidents ~ type + period + year,
 
 To convert the model from a *count* to a *rate* model (incidents per month).
 
-### MSPE (Test Set):
+### MSPE: Full vs Reduced Model
 
 ![MSPE Comparison](MSPE_comparison.png)
 
@@ -98,7 +98,7 @@ anova(full_model, reduced_model, test = "Chisq")
 
 ---
 
-## Residuals Plot
+## Residuals vs Linear Predictor
 
 ![Residuals Plot](Residuals.png)
 
@@ -128,7 +128,7 @@ summary(model)$deviance / summary(model)$df.residual
 
 ## Optional Visuals
 
-### Observed vs Predicted (Test Set)
+### Predicted vs Actual (Test Set)
 
 ![Observed vs Predicted](observed_vs_predicted.png)
 
@@ -143,7 +143,7 @@ plot(pred, test$incidents,
 abline(0, 1, col = "red", lty = 2)
 ```
 
-### Incidents by Ship Type
+### Distribution of Incidents by Ship Type
 
 ![Incidents by Ship Type](Incidents_by_Ship.png)
 
