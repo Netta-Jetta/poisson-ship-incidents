@@ -42,7 +42,7 @@ To convert the model from a *count* to a *rate* model (incidents per month).
 
 ### MSPE: Full vs Reduced Model
 
-![MSPE Comparison](MSPE_comparison.png)
+<img src="MSPE_comparison.png" alt="MSPE Comparison" width="500"/>
 
 ```r
 mspe_full <- mean((test$incidents - predict(model, newdata = test, type = "response"))^2)
@@ -100,7 +100,7 @@ anova(full_model, reduced_model, test = "Chisq")
 
 ## Residuals vs Linear Predictor
 
-![Residuals Plot](Residuals.png)
+<img src="Residuals.png" alt="Residuals Plot" width="500"/>
 
 **Residuals vs. Linear Predictor Plot**  
 *Residuals are roughly symmetric and centered around 0 — no strong violations. This supports a good model fit.*
@@ -130,7 +130,7 @@ summary(model)$deviance / summary(model)$df.residual
 
 ### Predicted vs Actual (Test Set)
 
-![Observed vs Predicted](observed_vs_predicted.png)
+<img src="observed_vs_predicted.png" alt="Observed vs Predicted" width="500"/>
 
 ```r
 pred <- predict(full_model, newdata = test, type = "response")
@@ -145,7 +145,7 @@ abline(0, 1, col = "red", lty = 2)
 
 ### Distribution of Incidents by Ship Type
 
-![Incidents by Ship Type](Incidents_by_Ship.png)
+<img src="Incidents_by_Ship.png" alt="Incidents by Ship Type" width="500"/>
 
 ```r
 boxplot(incidents ~ type, data = ships,
