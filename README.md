@@ -51,14 +51,17 @@ full_model <- glm(incidents ~ type + period + year,
 ```
 
 ### Why offset `log(service)`?
-
 To convert the model from a *count* to a *rate* model (incidents per month).
+
+✦ ✦ ✦ 
 
 ### Model Output Summary
 
-<img src="model_summary.png" alt="Full Model - GLM Summary Output" width="600"/>
+<img src="MSPE_Full_Model.png" alt="Full Model - GLM Summary Output" width="600"/>
 
 This summary shows the coefficients, standard errors, and significance levels for each predictor in the full Poisson model.
+
+✦ ✦ ✦ 
 
 ### MSPE (Full Model)
 
