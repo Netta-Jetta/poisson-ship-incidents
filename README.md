@@ -1,6 +1,9 @@
 # Poisson Regression: Ship Incident Modeling (Statistical Modeling for Data Science Applications - Peer Reviewed Assignment)
 
-This project applies **Poisson regression** to real-world shipping incident data. I model the rate of ship damage incidents using predictor variables like ship type, year of construction, and operational period. I also explore **model selection, deviance testing**, and **overdispersion**.
+## Overview
+
+This project models ship damage incidents using **Poisson regression**.  
+I compare **full and reduced models**, evaluate predictive accuracy using **MSPE**, check for **overdispersion**, and visualize key **diagnostics** to assess model fit.
 
 ---
 
@@ -55,7 +58,10 @@ mspe_full <- mean((test$incidents - predict(model, newdata = test, type = "respo
 I tried dropping `year` to test if it improves generalization:
 
 ```r
-model_reduced <- glm(incidents ~ type + period, ...)
+model_reduced <- glm(incidents ~ type + period,
+                     family = poisson,
+                     data = train,
+                     offset = log(service))
 ```
 
 ### MSPE:
